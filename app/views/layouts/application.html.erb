@@ -1,14 +1,48 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Meds</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Meds</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
 
-<%= yield %>
-
-</body>
+  <body>
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class='container'>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+            <%= link_to root_path, class: 'navbar-brand' do %>
+              <i class= "fa fa-medkit"></i>
+              Meds
+            <% end %>
+        </div>
+        <div class="collapse navbar-collapse" id="main-nav-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Tests", "#" %></li>
+            <li><%= link_to "About Us", "#" %></li>
+            <li><%= link_to "Contact Us", "#" %></li>
+            <div class="nav navbar-nav navbar-right">
+                <% if current_user %>
+                  <%= link_to 'Log Out', destroy_user_session_path, class: 'btn btn-success navbar-btn', method: :delete %>
+                <% else %>
+                  <%= link_to 'Log In', new_user_session_path, class: 'btn btn-success navbar-btn', method: :get %>
+                <% end %>
+            </div>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div>
+    </nav>
+    
+    <div class="container">
+      <% flash.each do |key, value| %>
+        <%= content_tag :div, value, class: "alert alert-#{key}" %>
+      <% end %>
+    <%= yield %>
+    </div>
 </html>

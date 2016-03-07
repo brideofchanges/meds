@@ -3,10 +3,16 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
-#Devise gem for authorise users
-gem 'devise'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+# Use Device Gem for user authentication
+gem 'devise'
+# PAPERCLIP for UPLOAD
+gem "paperclip", '4.3'
+# Use Bootstrap
+gem 'bootstrap-sass', '~> 3.3.6'
+# Use Font Awesome library for icons
+gem 'font-awesome-sass', '~> 4.5.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -46,4 +52,3 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-
