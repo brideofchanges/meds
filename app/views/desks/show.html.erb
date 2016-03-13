@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="">
+<h1>Please select test mode</h1> <br />
+<h3>Your role is a <%= @role.name %></h3> <br />
+<%= link_to 'Training', '#', class: 'btn btn-primary btn-lg'%>
+
+<%= link_to 'Exam', '#', class: 'btn btn-primary btn-lg'%>
+
+<br />
+<br />
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <% if current_user %>
+                <% @list1.each do |list| %>
+                    <div class="well well-sm">
+                        <%= list.test_name %>
+                        <%= link_to 'Do It', user_test_path(id: list.id), class: "btn #{list.test_type} btn-float-r" %>
+                    </div> <br />
+                <% end %>
+            <% else %>
+                No tests for you are aviliable.
+            <% end %>
+        </div>
+    </div>
+</div>
+
