@@ -24,7 +24,7 @@
         </div>
         <div class="collapse navbar-collapse" id="main-nav-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Tests", "#" %></li>
+            <li><%= link_to "Tests", user_tests_path(current_user) if current_user%></li>
             <li><%= link_to "About Us", "#" %></li>
             <li><%= link_to "Contact Us", "#" %></li>
             <div class="nav navbar-nav navbar-right">
