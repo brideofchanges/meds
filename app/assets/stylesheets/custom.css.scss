@@ -40,10 +40,27 @@
     border-color: #eea236;
 }
 
+.EXAM:hover {
+    color: #fff;
+    background-color: #FF9E02;
+    border-color: #C77B00;
+}
+
 .TRAINING {
     color: #fff;
     background-color: #5bc0de;
     border-color: #46b8da;
+}
+
+.TRAINING:hover {
+    color: #fff;
+    background-color: #3CB2C2;
+    border-color: #028DA0;
+}
+
+.desk-list {
+    font-weight: bolder;
+    background-color: #ECECEC;
 }
 
 //body {

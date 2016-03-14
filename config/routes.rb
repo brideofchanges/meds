@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {registrations: 'users/registrations' }
   resources :users do 
     get '/desk' => 'desks#show'
-    resources :tests
+    resources :tests do
+      get '/do' => 'do#show'
+    end
   end
   
   root 'pages#home'
