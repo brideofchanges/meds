@@ -7,15 +7,22 @@
                             <% end %>
             
         <div class="well">
-            
-
-             
-            
+        
              <% @list2.each do |list2| %>
                                 <div class="well well-sm">
                                     <%= list2.q %>
                                 </div> <br />
                             <% end %>
+        </div><br />
+        
+        
+        <div class="well">
+            <% @list3.each do |list3| %>
+                <div class="well well-sm">
+                    <%= list3.answer %>
+                </div> <br />
+            <% end %>
         </div>
+        
     </div>
 </div>
