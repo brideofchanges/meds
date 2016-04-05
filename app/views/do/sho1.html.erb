@@ -1,0 +1,57 @@
+<div class="row" id="row">
+    <div class="col-md-4 col-md-offset-4">
+        <% @list1.each do |list1| %>
+                                <div class="well well-sm">
+                                    <%= list1.test_name %>
+                                </div> <br />
+                            <% end %>
+            
+        <div class="well">
+             <% @list2.each do |list2| %>
+                                <div class="well well-sm">
+                                    <%= list2.q %>
+                                </div> <br />
+                            <% end %>
+        </div><br />
+        
+        
+        <div class="well">
+            <% @list3.each do |list3| %>
+                <div class="well well-sm ans", id="answ">
+                    <%= list3.answer %>
+                </div> <br />
+            <% end %>
+        </div>
+        
+    </div>
+</div>
+
+
+<br />
+
+<%= @lol2 %>
+
+<br />
+
+<%= button_tag(type: 'button', class: 'btn btn-success next-q', method: :POST) do %>
+  <%= content_tag(:strong, 'Next') %>
+<% end %>
+
+
+<script src="meds/assets/javascripts/jquery-1.12.2.js"></script>
+<script>
+    $(document).ready(function(){
+        
+       $('.ans').click(function() {
+    $(this).toggleClass('ans_selected');
+});
+    
+    
+    $('.next-q').on('click', getData);
+getData();
+    
+    });
+
+
+
+</script>

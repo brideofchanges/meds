@@ -1,0 +1,3 @@
+$("#answers_all").html("<%= escape_javascript(render(:partial => 'answers_all')) %>");
+<%# <%= select_tag(:do, options_for_select(Location.all.order('name ASC').collect { |l| [l.name, l.id] }, 
+[session[:location]||'']), include_blank: true) %>

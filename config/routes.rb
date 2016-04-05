@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     get '/desk' => 'desks#show'
     resources :tests do
       get '/do' => 'do#show'
+      get '/answers_all' => 'do#list_update'
     end
   end
   

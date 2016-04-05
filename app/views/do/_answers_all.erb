@@ -1,0 +1,30 @@
+<div class="well">
+            
+            <div class="well well-sm">
+                <%= @cur_q.q.to_s %>
+            </div> <br />
+</div><br/>
+
+<div class="well">
+            
+            <% @cur_ans_all.each do |f| %>
+            <div class="well well-sm ans">
+                <div><%= f.answer %></div>
+</div><br/>
+            <% end %>
+
+
+<%= link_to "Next", user_test_answers_all_path(:current_i => @i), class: 'btn btn-success', action: :list_update, controller: :do, method: :get, remote: :true%>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>
+
+    $(document).ready(function(){
+        
+       $('.ans').click(function() {
+    $(this).toggleClass('ans_selected');
+});
+    });
+
+
+</script>
