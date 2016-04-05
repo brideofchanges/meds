@@ -6,4 +6,7 @@ class User < ActiveRecord::Base
   has_one :role
   has_one :desk
   has_many :tests
+  has_many :attempts
+  has_many :results
+  
 end
