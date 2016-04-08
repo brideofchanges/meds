@@ -2,6 +2,7 @@ class DoController < ApplicationController
     before_filter :i_default, :only => [:show]
     
     def show
+        #@attempt = Attempt.create(user_id: params[:user_id], test_id: params[:test_id]) # creating attempt
         i_default
         @cur_test = Test.where(id: params[:test_id])
         @cur_q_all = Question.where(test_id: @cur_test)

@@ -5,6 +5,12 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.4'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
 # Use Device Gem for user authentication
 gem 'devise'
 # PAPERCLIP for UPLOAD

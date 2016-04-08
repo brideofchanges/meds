@@ -2,16 +2,18 @@
             
             <div class="well well-sm">
                 <%= @cur_q.q.to_s %>
-            </div> <br />
+            </div>
 </div><br/>
 
 <div class="well">
             
             <% @cur_ans_all.each do |f| %>
             <div class="well well-sm ans">
+                <%# <%= hidden_field_tag f.id %>
                 <div><%= f.answer %></div>
-</div><br/>
+            </div>
             <% end %>
+</div><br/>
 
 
 <%= link_to "Next", user_test_answers_all_path(:current_i => @i), class: 'btn btn-success', action: :list_update, controller: :do, method: :get, remote: :true%>
@@ -22,7 +24,7 @@
     $(document).ready(function(){
         
        $('.ans').click(function() {
-    $(this).toggleClass('ans_selected');
+    $(this).toggleClass('ans_selected').append('<%= @cur_ans_all.id %>');
 });
     });
 
