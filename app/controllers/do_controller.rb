@@ -14,6 +14,7 @@ class DoController < ApplicationController
     end
     
     def list_update
+        @i=0
         @i = params[:current_i].try(:to_i)
         @i = @i+1
         @cur_test = Test.where(id: params[:test_id])
